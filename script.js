@@ -232,7 +232,7 @@
 //SHORTEST JAVASCRIPT PROGRAM IE THE EMPTY FILE
 
 //javascripts creates a window, an object that is given us by the javascript engine, also creates a "this" keyword
-//the object that is created is called the global object and this global object is created with the glovbal execution context
+//the object that is created is called the global object and this global object is created with the global execution context
 //chrome : v8 engine (javascript engine)
 //global space: any code that we write in javascript that is not present within a function
 
@@ -997,3 +997,42 @@
 // }
 // fetchData();
 
+//infinite currying
+
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       return function (d) {
+//         return a + b + c + d;
+//       };
+//     };
+//   };
+// }
+
+// console.log(sum(1)(2)(3)(4));
+
+// merge two strings alternatively
+
+// function mergeAlternatively(str1, str2) {
+//   let result = [];
+//   for (let i = 0; i < str1.length + str2.length; i++) {
+//     if (i < str1.length) {
+//       result.push(str1[i]);
+//     }
+//     if (i < str2.length) {
+//       result.push(str2[i])
+//     }
+//   }
+//   return result.join('');
+// }
+
+// console.log(mergeAlternatively("Debdip", "Bhattacharya"));
+
+// const a = {
+//   age: 19,
+//   name: "Debdip",
+// };
+
+// const newObj = { ...a, dish: "biriyani" };
+
+// console.log(newObj.age, newObj.name, newObj.dish);
