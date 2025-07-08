@@ -1036,3 +1036,26 @@
 // const newObj = { ...a, dish: "biriyani" };
 
 // console.log(newObj.age, newObj.name, newObj.dish);
+
+//event loops
+
+// console.log("start");
+
+// setTimeout(() => {
+//   function cbF() {
+//     console.log("callback function");
+//   }
+//   cbF();
+// }, 1000);
+
+// new Promise((resolve, reject) => {
+//   resolve("Promise resolved");
+// })
+//   .then((data) => {
+//     console.log("data fetched from promise", data);
+//   })
+//   .catch((err) => {
+//     reject("Error in promise", err);
+//   });
+
+// console.log("end");
