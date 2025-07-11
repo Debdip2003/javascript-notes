@@ -1060,3 +1060,10 @@
 
 // console.log("end");
 
+//Event Delegation in javascript
+
+// document.getElementById("parent").addEventListener("click", (event) => {
+//   if (event.target.tagName === "BUTTON") {
+//     console.log("Button clicked", event.target.innerText);
+//   }
+// });
