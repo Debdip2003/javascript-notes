@@ -1067,3 +1067,212 @@
 //     console.log("Button clicked", event.target.innerText);
 //   }
 // });
+
+// function getThis() {
+//   return this;
+// }
+
+// const obj1 = { name: "obj1" };
+// const obj2 = { name: "obj2" };
+
+// obj1.getThis = getThis;
+// obj2.getThis = getThis;
+
+// console.log(obj1.getThis());
+
+// const obj3 = {
+//   __proto__: obj1,
+//   name: "obj3",
+// };
+// console.log(obj1.name);
+
+// const obj4 = {
+//   name: "obj4",
+//   getThis() {
+//     return this;
+//   },
+// };
+
+// const obj5 = { name: "obj5" };
+
+// obj5.getThis = obj4.getThis;
+// console.log(obj5.getThis());
+
+//printing numbers from 1 to n using recursion
+// const printNumber = (n) => {
+//   const helper = (i) => {
+//     if (i > n) return;
+//     console.log(i);
+//     helper(i + 1);
+//   };
+//   helper(1);
+// };
+
+// printNumber(5);
+
+//printing sum of numbers from 1 to n using recursion
+// const numbersSum = (n) => {
+//   let sum = 0;
+//   const helper = (i) => {
+//     if (i > n) return 0;
+//     return i + helper(i + 1);
+//   };
+//   sum = helper(1);
+//   console.log(sum);
+// };
+
+// numbersSum(5);
+
+// Linear Search using recursion
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const num = 5;
+
+// const linearSearch = (arr, index, num) => {
+//   if (arr[index] === num) console.log(index + 1);
+//   else if (index == -1) console.log("Not Found");
+//   else {
+//     linearSearch(arr, index + 1, num);
+//   }
+// };
+// linearSearch(arr, 0, num);
+
+//maximum and minimum from the array
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const maxelement = arr.sort((a, b) => b - a)[0];
+// console.log(maxelement);
+
+// let maxelement = arr[0];
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > maxelement) {
+//     maxelement = arr[i];
+//   }
+// }
+// console.log(maxelement);
+
+//minimum element
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const minelement = arr.sort((a, b) => a - b)[0];
+// console.log(minelement);
+
+// let minelement = arr[0];
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] < minelement) {
+//     minelement = arr[i];
+//   }
+// }
+// console.log(minelement);
+
+//find the frequency of character in a string
+// const str = "debdip";
+// const frequency = (str) => {
+//   let obj = {};
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i].toLowerCase();
+//     if (obj[char]) {
+//       obj[char] += 1;
+//     } else {
+//       obj[char] = 1;
+//     }
+//   }
+//   console.log(obj);
+//   console.log(obj.d);
+// };
+
+// frequency(str);
+
+//remove duplicates from an array
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3];
+// const removeDuplicates = (arr) => {
+//   const obj = {};
+//   const newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!obj[arr[i]]) {
+//       obj[arr[i]] = true;
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   console.log(newArr);
+// };
+
+// removeDuplicates(arr);
+
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// array.splice(1, 2, "debdip", "debangshi");
+// console.log(array); // [1, 2, 3, 4, 5]
+
+// 1st way of describing object
+// const obj = {
+//   name: "debangshi",
+//   age: 22,
+//   address: "kolkata",
+// };
+
+// obj.name = "debdip";
+// obj.age = 44;
+// console.log(obj);
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// arr[0] = "debdip";
+// console.log(arr);
+
+// const arr = [1, "debdip", { name: "debangshi", age: 22 }, 4, 5, 6, 7, 8, 9, 10];
+// arr[2].name = "debdip";
+// console.log(arr);
+
+//prototyping in js , where we want to share some methods within each other instead of writing the same code for each instance (mainly used the concept of inheritance)
+// function car(make, model) {
+//   this.make = make;
+//   this.model = model;
+// }
+
+// car.prototype.startEngine = function () {
+//   console.log(`${this.make} ${this.model} engine started.`);
+// };
+
+// const myCar = new car("debdip", "hello");
+// const anotherCar = new car("debangshi", "testing");
+
+// anotherCar.startEngine();
+// myCar.startEngine();
+
+//concept of memoization
+// function memoize(fn) {
+//   const cache = {}; //declare the cache to store the result
+
+//   return function (...args) {
+//     const key = JSON.stringify(args); //convert the args to string to use it as a key
+
+//     //check if the result is already in the cache
+//     if (cache[key]) {
+//       console.log("fetching from the cache");
+//       return cache[key]; //if yes then return the result from the cache
+//     } else {
+//       console.log("recalculating the data");
+//       const result = fn(...args);
+//       cache[key] = result; //store the result in the cache
+//       return result;
+//     }
+//   };
+// }
+
+// function add(a, b) {
+//   return a + b;
+// }
+
+// const memoizedAdd = memoize(add);
+
+// console.log(memoizedAdd(2, 3));
+// console.log(memoizedAdd(4, 5));
+// console.log(memoizedAdd(2, 3));
+
+//concept of shadowing
+// const x = 10;
+// function hello() {
+//   const x = 20;
+//   console.log(x); //20
+// }
+// console.log(x);
+// hello(); //20
+
+
+
