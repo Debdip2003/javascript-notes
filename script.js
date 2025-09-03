@@ -1274,5 +1274,192 @@
 // console.log(x);
 // hello(); //20
 
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       console.log(a + b + c);
+//     };
+//   };
+// }
 
+// sum(1)(2)(3);
 
+// const vowels = ["a", "e", "i", "o", "u"];
+// const s = "leetcode";
+// const newstr = s.split("");
+// let leftPtr = 0;
+// let rightPtr = newstr.length - 1;
+// while (leftPtr < rightPtr) {
+//   if (vowels.includes(newstr[leftPtr]) && vowels.includes(newstr[rightPtr])) {
+//     [newstr[leftPtr], newstr[rightPtr]] = [newstr[rightPtr], newstr[leftPtr]];
+//     leftPtr++;
+//     rightPtr--;
+//   } else {
+//     if (!vowels.includes(leftPtr)) {
+//       leftPtr++;
+//     }
+//     if (!vowels.includes(rightPtr)) {
+//       rightPtr--;
+//     }
+//   }
+//   console.log(newstr);
+// }
+
+// const randomNote = "aa";
+// const megazine = "a";
+
+// const canContruct = (randomNote, megazine) => {
+//   const megazineMap = {};
+//   for (let char of megazine) {
+//     megazineMap[char] = (megazineMap[char] || 0) + 1;
+//   }
+//   for (let char of randomNote) {
+//     if (megazineMap[char]) {
+//       megazineMap[char]--;
+//     } else {
+//       console.log(false);
+//     }
+//   }
+//   console.log(true);
+// };
+
+// canContruct(randomNote, megazine);
+
+// const arr = [{ x: 1 }, { x: 0 }, { x: -1 }];
+
+// var sortBy = (arr, fn) => {
+//   return arr.sort((a, b) => {
+//     const fnResultA = fn(a);
+//     const fnResultB = fn(b);
+
+//     return fnResultA - fnResultB;
+//   });
+// };
+
+// console.log(sortBy(arr, (num) => num.x));
+
+// to check the number of keys or values present in an object
+// const obj = {
+//   name: "debdip",
+//   age: 21,
+// };
+
+// console.log(Object.values(obj));
+
+// const json = '{"result":true, "count":42}';
+// console.log(JSON.parse(json).result);
+
+// const obj = {
+//   name: "debdip",
+//   age: 42,
+// };
+
+// console.log(JSON.stringify(obj));
+
+//maximum number of consequetive 1's
+// const nums = [1, 1, 0, 0, 1, 0, 1, 0];
+
+// function consequetiveOnes(num) {
+//   let maxCount = 0;
+//   let currentCount = 0;
+
+//   for (let i = 0; i < num.length; i++) {
+//     if (num[i] === 1) {
+//       currentCount++;
+//       maxCount = Math.max(maxCount, currentCount);
+//     } else {
+//       currentCount = 0;
+//     }
+//   }
+//   console.log(maxCount);
+// }
+
+// consequetiveOnes(nums);
+
+// const nums = [0, 1, 4, 0, 5, 2];
+
+// function moveZeroToEnd(nums) {
+//   let nonZeroIndex = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       [nums[nonZeroIndex], nums[i]] = [nums[i], nums[nonZeroIndex]];
+//       nonZeroIndex++;
+//     }
+//   }
+//   console.log(nums);
+// }
+
+// moveZeroToEnd(nums);
+
+// function moveZeroToEnd(nums) {
+//   const nonZeroNumbers = nums.filter((num) => num !== 0).length;
+//   const numberOfZeros = nums.length - nonZeroNumbers;
+//   console.log([
+//     ...nums.filter((num) => num !== 0),
+//     ...Array(numberOfZeros).fill(0),
+//   ]);
+// }
+
+// moveZeroToEnd(nums);
+
+// const nums = [1, 2, 3, 4, 5, 6];
+// const k = 2;
+
+// const moveNumberToBack = (nums, k) => {
+//   const shiftedNumber = [];
+//   for (let i = 0; i < k; i++) {
+//     shiftedNumber.push(nums.shift());
+//   }
+//   //   console.log(shiftedNumber);
+//   console.log([...nums, ...shiftedNumber]);
+// };
+
+// moveNumberToBack(nums, k);
+
+// const nums = [-2, 2, 4, 4, 4, 4, 5, 5];
+// // console.log(nums.sort());
+
+// const removeDuplicates = (nums) => {
+//   const uniqueNumber = [...new Set(nums)];
+//   //   console.log(uniqueNumber);
+//   for (let i = 0; i <= nums.length - uniqueNumber.length; i++) {
+//     uniqueNumber.push("_");
+//   }
+
+//   console.log(uniqueNumber);
+// };
+
+// removeDuplicates(nums);
+
+//missing number
+// const nums = [1, 3, 6, 4, 2, 5];
+// const findingMissingNumber = (n) => {
+//   const length = n.length;
+//   const expectedSum = ((length + 1) * (length + 2)) / 2;
+//   const actualSum = n.reduce((acc, num) => acc + num, 0);
+//   const missingNumber = expectedSum - actualSum - length - 1;
+//   console.log(missingNumber);
+// };
+// findingMissingNumber(nums.sort((a, b) => a - b));
+
+// const nums = [1, 3, 10, 3, 5, 1, 5];
+
+// const findingSingleOccuringNumber = (arr) => {
+//   const freq = {};
+
+//   for (const num of arr) {
+//     freq[num] = (freq[num] || 0) + 1;
+//   }
+//   //   console.log(freq);
+//   for (const num in freq) {
+//     if (freq[num] === 1) {
+//       console.log(num);
+//     }
+//   }
+// };
+
+// findingSingleOccuringNumber(nums);
+
+// const string = " amazing coding skills ";
+// const tempString = string.trim().split(" ").reverse().join(" ");
+// console.log(tempString);
